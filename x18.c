@@ -1,33 +1,31 @@
 #include <stdio.h>
-
-int perimetro(int a, int b, int c)
-{
-    int perimetro;
-    
-    perimetro= a + b + c;
-    return (perimetro);   
-}
-
-int area(int base, int h)
-{
-    int area;
-
-    area=base*h/2;
-
-    
-    printf("l'area è: %d\n", area);
-
-return(0);
-}
-
-int main()
+#include <math.h>
+int main ()
 {
     int a;
     int b;
     int c;
-    printf("inserisci tre lati:");
-    scanf("%d %d %d", &a, &b, &c);
-    printf("int perimetro: %d\n", perimetro(a, b, c));
+    int p;
+    int A;
 
-    return (0);
+    printf("Inserisci le misure dei tre lati\n");
+    scanf(" %d", &a);
+    scanf(" %d", &b);
+    scanf(" %d", &c);
+    p=(a+b+c)/2;
+    A=p*(p-a)*(p-b)*(p-c);
+
+    if(A>0)
+    {
+        printf("il perimetro è: %d cm.\n", a+b+c);
+        printf("l'area è %f cmq\n", sqrt(A));
+
+    }
+    else
+    {
+    printf("il triangolo non esiste");
+    }
+    
+    return(0);
 }
+
